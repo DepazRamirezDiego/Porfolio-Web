@@ -1,0 +1,114 @@
+---
+import HTML5 from '../icons/HTML5.astro';
+import CSS from '../icons/CSS.astro';
+import Tailwind from '../icons/TailwindCSS.astro';
+import JavaScript from '../icons/JavaScript.astro';
+import AstroIcon from '../icons/AstroIcon.astro';
+import GitHub from '../icons/GitHub.astro';
+import LinkButton from '../icons/LinkButton.astro';
+import Bootstrap from '../icons/Bootstrap.astro';
+import Link from '../icons/Link.astro';
+
+const TAGS ={
+HTML5: {
+name: "HTML5",
+class: "bg-[#934e00] text-white text-[12px] font-bold",
+icon: HTML5,
+},
+CSS: {
+    name: "CSS3",
+class: "bg-[#3b83bd] text-white text-[12px] font-bold ",
+icon: CSS,
+},
+Tailwind: {
+    name: "Tailwind CSS",
+class: "bg-[#003159] text-white text-[12px] font-bold",
+icon: Tailwind,
+},
+JavaScript: {
+    name: "JavaScript",
+class: "bg-[#b69d02] text-white text-[12px] font-bold ",
+icon: JavaScript,
+},
+AstroIcon: {
+    name: "Astro",
+class: "bg-[#a100d1] text-white text-[12px] font-bold ",
+icon: AstroIcon},
+Bootstrap: {
+    name: "Bootstrap",
+class: "bg-[#490076] text-white text-[12px] font-bold ",
+icon: Bootstrap,
+}
+}
+
+const PROYECTOS = [
+{
+title : 'Clon Página Tesla | Tesla - El coche de tus sueños.',
+descripcion : 'Página clon de Tesla empleando lenguajes HTML, CSS y JavaScript, junto con los frameworks Tailwind CSS y Astro.',
+link: 'https://imaginative-raindrop-8d54e7.netlify.app/',
+github: 'https://github.com/DepazRamirezDiego/TeslaLandingPage',
+imagen: '/proyectos/tesla-lp.jpg',
+desImg: 'Captura de Pantalla | Página clon Tesla',
+
+tags: [TAGS.JavaScript, TAGS.Tailwind, TAGS.AstroIcon]
+},
+{
+title : 'ANIME OUTPOST | Una tienda de calidad',
+descripcion : 'Página web de ventas con temática anime empleando lenguajes HTML, CSS y JavaScript, junto con el framework Bootstrap.',
+desImg: 'Captura de Pantalla | Página Web Ventas',
+github: 'https://github.com/DepazRamirezDiego/Pagina-Web-Ventas',
+imagen: '/proyectos/store-lp.png',
+tags: [TAGS.JavaScript, TAGS.Bootstrap]
+}
+]
+---
+
+<div class="flex flex-col gap-y-16">
+    {
+      PROYECTOS.map(({ imagen, title, desImg, descripcion, tags, link, github }) => (
+      <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+    <div class="w-full md:w-1/2">
+      <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+        <img alt={desImg} class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" src={imagen} />
+      </div>
+    </div>
+  
+    <div class="w-full md:w-1/2 md:max-w-lg">
+      <h3 class="text-2xl font-bold text-gray-100">
+        {title}
+      </h3>
+      <div class="flex flex-wrap mt-2">
+        <ul class="flex flex-row mb-2 gap-x-2">
+            {tags.map((tag)=> (
+        <li>
+            <span class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2`}>
+                {typeof tag === 'object' && tag.icon &&
+                <tag.icon class="size-3" />}
+                {typeof tag === 'object' ? tag.name : tag}
+            </span>
+        </li>
+        ))}
+          </ul>
+  
+        <div class="mt-2 text-gray-400">{descripcion}</div>
+        <footer class="flex items-end justify-start mt-4 gap-x-4">
+            {github && (
+            <LinkButton href={github}>
+              <GitHub class="size-6" />
+              Code
+              
+            </LinkButton>
+          )}
+          {link && (
+            <LinkButton href={link}>
+              <Link class="size-4" />
+              Preview
+            </LinkButton>
+          )}
+        </footer>
+      </div>
+    </div>
+  </article>
+      ))
+    }
+  </div>

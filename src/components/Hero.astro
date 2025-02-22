@@ -1,0 +1,51 @@
+---
+import Badge from "../components/Badge.astro"
+import SocialPill from "../components/SocialPill.astro"
+import EmailIcon from "../icons/Email.astro"
+import LinkedInIcon from "../icons/LinkedIn.astro"
+import GitHubIcon from "../icons/GitHub.astro"
+---
+
+<div class="max-w-xl">
+  <div class="flex gap-4 mb-4">
+    <img
+      class="rounded-full shadow-lg size-16"
+      src="/provisional-photo.jpg"
+      alt="Diego Eduardo"
+    />
+    <a
+      href="https://www.linkedin.com/in/diego-depaz-ramirez-90729b278/"
+      target="_blank"
+      rel="noopener"
+      class="flex items-center transition md:justify-center md:hover:scale-105"
+    >
+      <Badge>Disponible para trabajar</Badge>
+    </a>
+  </div>
+  <h1
+  class="text-4xl font-bold tracking-tight sm:text-5xl text-white"
+>
+  Hey, soy Diego Eduardo
+  </h1>
+  <p
+    class="mt-6 text-xl [&>strong]:text-yellow-200 [ [&>strong]:font-semibold text-gray-300"
+  >
+  +2 años de experiencia. <strong>Desarrollador Web y Analista QA</strong>
+  de Lima, Perú 🇵🇪.
+  Especializado en crear aplicaciones únicas.
+  </p>
+  <nav class="flex flex-wrap gap-4 mt-8">
+    <SocialPill href="mailto://depazramirezdiego02@gmail.com">
+        <EmailIcon class="size-4 md:size-6" />
+        <p class="text-[16px]">¡Contáctame!</p>
+    </SocialPill>
+    <SocialPill       href="https://www.linkedin.com/in/diego-depaz-ramirez-90729b278/"    >
+        <LinkedInIcon class="size-4 md:size-6" />
+        <p class="text-[16px]">LinkedIn</p>
+    </SocialPill>
+    <SocialPill href="https://github.com/DepazRamirezDiego">
+        <GitHubIcon class="size-4 md:size-6" />
+        <p class="text-[16px]">GitHub</p>
+    </SocialPill>
+  </nav>
+</div>

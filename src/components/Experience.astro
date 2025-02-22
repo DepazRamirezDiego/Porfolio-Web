@@ -1,0 +1,30 @@
+---
+import ExperienceItem from "../components/ExperienceItem.astro"
+const EXPERIENCE = [
+  {
+    date: "Actualmente...",
+    title: "Desarrollador Web | Freelancer",
+    company: "",
+    descripcion:
+      "Diseño y desarrollo de páginas web innovadoras priorizando la experiencia del usuario. Enfocado en brindar calidad y eficacia en el trabajo desarrollado",
+    link: "https://github.com/DepazRamirezDiego",
+  },
+  {
+    date: "Febrero 2024 - Noviembre 2024",
+    title: "Analista QA | Freelancer",
+    company: "Flashscore",
+    descripcion:
+      "Responsable del análisis y revisión de especificaciones funcionales/técnicos. Automatización a nivel frontend con Selenium y Cypress",
+  },
+]
+---
+
+<ol class="relative mt-16">
+  {
+    EXPERIENCE.map((experience) => (
+      <li class="">
+        <ExperienceItem {...experience} />
+      </li>
+    ))
+  }
+</ol>
