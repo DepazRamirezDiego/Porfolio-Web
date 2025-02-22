@@ -1,2 +1,2 @@
-# Porfolio Web | Depaz Ramirez Diego
-<span style="font-weight: bold; font-family: monospace;">&lt;/&gt;👨‍💻 Desarrollador Web | Analista QA</span>
+**<h2>Porfolio Web | Depaz Ramirez Diego</h2>**
+**<h3>👨‍💻 Desarrollador Web | Analista QA</h3>**
